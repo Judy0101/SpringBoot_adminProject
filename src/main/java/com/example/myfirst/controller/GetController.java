@@ -14,15 +14,15 @@ public class GetController {
     }
 
     @GetMapping("/getParameter")
-    public String getParameter(@RequestParam String id, @RequestParam(name = "password") String pwd){
+    public String getParameter(@RequestParam String id, @RequestParam(name = "password") String pwd) {
         String password = "bbbb";
 
         System.out.println("id : " + id);
         System.out.println("pw : " + pwd);
 
         return id+pwd;
-    }
 
+    }
     //localhost:8080/api/multiParameter?account=abcd&email=study@gmail.com&page=10
     @GetMapping("/getMultiParameter")
     public SearchParam getMultiParameter(SearchParam searchParam){
