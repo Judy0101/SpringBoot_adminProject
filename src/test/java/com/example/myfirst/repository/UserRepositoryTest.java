@@ -3,10 +3,14 @@ package com.example.myfirst.repository;
 
 import com.example.myfirst.MyfirstApplicationTests;
 import com.example.myfirst.model.entity.User;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -62,7 +66,21 @@ public class UserRepositoryTest extends MyfirstApplicationTests {
 
     }
 
+    @Test
+    @Transactional
+    //데이터 베이스에서 롤백을 시켜 실질적으로 영향 no
     public void delete(){
+        Optional<User> user = userRepository.findById(2L);
 
+        Assert.assertTrue(user.isPresent());
+        //삭제되기 위해서는 존재해야함
+
+        user.ifPresent(selectUser -> {
+            userRepository.delete(selectUser);
+        });
+        
+        Optional<User> deletUser = userRepository.findById(2L);
+        
+        Assert.assertFalse(deletUser.isPresent());
     }
 }
