@@ -25,9 +25,9 @@ public class OrderDetailRepositoryTest extends MyfirstApplicationTests {
         orderDetail.setTotalPrice(BigDecimal.valueOf(9000000));
 
         //어떠한 장바구니에
-        orderDetail.setOrderGroupId(1L);
+        //orderDetail.setOrderGroupId(1L);
         //어떤 상품?
-        orderDetail.setItemId(1L);
+        //orderDetail.setItemId(1L);
         orderDetail.setCreatedAt(LocalDateTime.now());
         orderDetail.setCreatedBy("AdminServer");
 
