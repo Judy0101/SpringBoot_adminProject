@@ -42,7 +42,9 @@ public class UserRepositoryTest extends MyfirstApplicationTests {
     @Test
     @Transactional
     public void read(){
-        Optional<User> user = userRepository.findById(7L);
+
+        // select * from uer where id = ?
+        Optional<User> user = userRepository.findByAccount("TestUser01");
 
 
         user.ifPresent(selectUser -> {
