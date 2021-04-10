@@ -5,33 +5,25 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
-import java.util.List;
 
-@Data
-@AllArgsConstructor
-@Entity
 @NoArgsConstructor
-public class User {
+@AllArgsConstructor
+@Data
+@Entity
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String account;
+    private String type;
 
-    private String password;
-
-    private String email;
-
-    private String status;
-
-    private String phoneNumber;
-
-    private LocalDateTime registeredAt;
-
-    private LocalDateTime unregisterdAt;
+    private String title;
 
     private LocalDateTime createdAt;
 
