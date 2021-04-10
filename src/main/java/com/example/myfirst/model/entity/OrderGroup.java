@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 @Entity
-@ToString(exclude = {"user", "orderGroup"})
+@ToString(exclude = {"user", "orderDetailList"})
 public class OrderGroup {
 
     @Id
