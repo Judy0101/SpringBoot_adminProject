@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserApuRequest {
+public class UserApiRequest {
 
     private Long id;
 

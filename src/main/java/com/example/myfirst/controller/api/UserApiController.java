@@ -2,19 +2,26 @@ package com.example.myfirst.controller.api;
 
 import com.example.myfirst.ifs.CrudInterface;
 import com.example.myfirst.model.network.Header;
-import com.example.myfirst.model.network.request.UserApuRequest;
+import com.example.myfirst.model.network.request.UserApiRequest;
 import com.example.myfirst.model.network.response.UserApiResponse;
+import com.example.myfirst.service.UserApiLogicService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@Slf4j //로깅 방법
 @RestController
 @RequestMapping("/api/user")
-public class UserApiController implements CrudInterface<UserApuRequest, UserApiResponse> {
+public class UserApiController implements CrudInterface<UserApiRequest, UserApiResponse> {
 
+    @Autowired
+    private UserApiLogicService userApiLogicService;
 
     @Override
     @PostMapping("") // /api/user
-    public Header<UserApiResponse> create(@RequestBody UserApuRequest userApuRequest) {
-        return null;
+    public Header<UserApiResponse> create(@RequestBody Header<UserApiRequest> request) {
+        log.info("{}", request); //-> request.toString(), ABC
+        return userApiLogicService.create(request);
     }
 
     @Override
@@ -25,7 +32,7 @@ public class UserApiController implements CrudInterface<UserApuRequest, UserApiR
 
     @Override
     @PutMapping("") // /api/user
-    public Header<UserApiResponse> update(@RequestBody UserApuRequest request) {
+    public Header<UserApiResponse> update(@RequestBody Header<UserApiRequest> request) {
         return null;
     }
 
