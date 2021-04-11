@@ -1,6 +1,7 @@
 package com.example.myfirst.controller;
 
 import com.example.myfirst.model.SearchParam;
+import com.example.myfirst.model.network.Header;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -31,5 +32,12 @@ public class GetController {
         System.out.println(searchParam.getPage());
 
         return searchParam;
+    }
+
+    @GetMapping("/header")
+    public Header getHeader(){
+
+        // {"resultCode" :"OK", "descrition" : "OK"}
+        return Header.builder().resultCode("OK").description("OK").build();
     }
 }
