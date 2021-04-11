@@ -1,5 +1,6 @@
 package com.example.myfirst.model.network.response;
 
+import com.example.myfirst.model.enurmclass.UserStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,7 +21,7 @@ public class UserApiResponse {
 
     private String password;
 
-    private String status;
+    private UserStatus status;
 
     private String email;
 

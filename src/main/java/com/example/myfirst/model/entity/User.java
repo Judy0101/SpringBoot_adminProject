@@ -1,6 +1,7 @@
 package com.example.myfirst.model.entity;
 
 
+import com.example.myfirst.model.enurmclass.UserStatus;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedBy;
@@ -33,7 +34,8 @@ public class User {
 
     private String email;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private UserStatus status; ///REGISTERED / UNREGISTERED / WAITING
 
     private String phoneNumber;
 

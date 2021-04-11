@@ -22,7 +22,7 @@ public class ItemRepositoryTest extends MyfirstApplicationTests {
         item.setName("노트북");
         item.setTitle("삼성 노트북");
         item.setContent("2019년 형 노트북 입니다.");
-        item.setPrice(9000000);
+       //item.setPrice(90000000);
         item.setBrandName("삼성");
         item.setRegisteredAt(LocalDateTime.now());
         item.setCreatedAt(LocalDateTime.now());
