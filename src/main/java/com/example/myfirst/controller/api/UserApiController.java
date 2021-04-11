@@ -7,7 +7,12 @@ import com.example.myfirst.model.network.response.UserApiResponse;
 import com.example.myfirst.service.UserApiLogicService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Slf4j //로깅 방법
 @RestController
@@ -17,6 +22,11 @@ public class UserApiController implements CrudInterface<UserApiRequest, UserApiR
     @Autowired
     private UserApiLogicService userApiLogicService;
 
+    @GetMapping("")
+    public Header<List<UserApiResponse>> search(@PageableDefault(sort = "id", direction = Sort.Direction.ASC, size=15) Pageable pageable){
+        log.info("{}", pageable);
+        return userApiLogicService.seach(pageable);
+    }
     @Override
     @PostMapping("") // /api/user
     public Header<UserApiResponse> create(@RequestBody Header<UserApiRequest> request) {
