@@ -5,7 +5,7 @@ import com.example.myfirst.model.entity.Item;
 import com.example.myfirst.model.entity.OrderDetail;
 import com.example.myfirst.model.entity.OrderGroup;
 import com.example.myfirst.model.entity.User;
-import com.example.myfirst.model.enumclass.OrderType;
+import com.example.myfirst.model.enurmclass.OrderType;
 import com.example.myfirst.repository.ItemRepository;
 import com.example.myfirst.repository.OrderDetailRepository;
 import com.example.myfirst.repository.OrderGroupRepository;

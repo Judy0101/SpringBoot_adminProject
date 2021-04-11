@@ -18,7 +18,7 @@ public class ItemRepositoryTest extends MyfirstApplicationTests {
     public void create(){
 
         Item item = new Item();
-        item.setStatus("UNREGISTERD");
+        //item.setStatus("UNREGISTERD");
         item.setName("노트북");
         item.setTitle("삼성 노트북");
         item.setContent("2019년 형 노트북 입니다.");

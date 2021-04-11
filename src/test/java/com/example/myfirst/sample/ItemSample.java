@@ -4,7 +4,7 @@ import com.example.myfirst.MyfirstApplicationTests;
 import com.example.myfirst.model.entity.Category;
 import com.example.myfirst.model.entity.Item;
 import com.example.myfirst.model.entity.Partner;
-import com.example.myfirst.model.enumclass.ItemStatus;
+import com.example.myfirst.model.enurmclass.ItemStatus;
 import com.example.myfirst.repository.CategoryRepository;
 import com.example.myfirst.repository.ItemRepository;
 import com.example.myfirst.repository.PartnerRepository;

@@ -3,7 +3,7 @@ package com.example.myfirst.sample;
 import com.example.myfirst.MyfirstApplicationTests;
 import com.example.myfirst.model.entity.AdminUser;
 import com.example.myfirst.model.entity.User;
-import com.example.myfirst.model.enumclass.UserStatus;
+import com.example.myfirst.model.enurmclass.UserStatus;
 import com.example.myfirst.repository.AdminUserRepository;
 import com.example.myfirst.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;

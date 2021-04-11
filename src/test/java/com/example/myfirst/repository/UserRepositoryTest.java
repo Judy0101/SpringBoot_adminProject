@@ -4,6 +4,7 @@ package com.example.myfirst.repository;
 import com.example.myfirst.MyfirstApplicationTests;
 import com.example.myfirst.model.entity.Item;
 import com.example.myfirst.model.entity.User;
+import com.example.myfirst.model.enurmclass.UserStatus;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
@@ -26,7 +27,7 @@ public class UserRepositoryTest extends MyfirstApplicationTests {
 
         String account = "Test03";
         String password = "Test01";
-        String status = "REGISTERD";
+        UserStatus status = UserStatus.REGISTERED;
         String email = "Test01@gmail.com";
         String phoneNumber = "010-1111-3333";
         LocalDateTime registeredAt = LocalDateTime.now();
