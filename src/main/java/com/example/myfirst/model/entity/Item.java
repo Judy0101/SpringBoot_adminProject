@@ -1,6 +1,7 @@
 package com.example.myfirst.model.entity;
 
 
+import com.example.myfirst.model.enurmclass.ItemStatus;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.apache.tomcat.jni.Local;
@@ -29,7 +30,8 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private ItemStatus status; // 등록/ 해지/ 검수중(등록 대기중)
 
     private String name;
 

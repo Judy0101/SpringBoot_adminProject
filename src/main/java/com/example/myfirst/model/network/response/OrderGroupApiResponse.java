@@ -1,9 +1,11 @@
 package com.example.myfirst.model.network.response;
 
+import com.example.myfirst.model.enurmclass.OrderType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.criterion.Order;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -18,7 +20,7 @@ public class OrderGroupApiResponse {
 
     private String status;
 
-    private String orderType;
+    private OrderType orderType;
 
     private String revAddress;
 
