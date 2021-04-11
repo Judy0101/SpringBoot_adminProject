@@ -2,6 +2,7 @@ package com.example.myfirst.controller.api;
 
 import com.example.myfirst.controller.CrudController;
 import com.example.myfirst.ifs.CrudInterface;
+import com.example.myfirst.model.entity.Item;
 import com.example.myfirst.model.network.Header;
 import com.example.myfirst.model.network.request.ItemApiRequest;
 import com.example.myfirst.model.network.response.ItemApiResponse;
@@ -16,15 +17,8 @@ import javax.annotation.PostConstruct;
 @Slf4j
 @RestController
 @RequestMapping("/api/item")
-public class ItemApiController extends CrudController<ItemApiRequest, ItemApiResponse> {
+public class ItemApiController extends CrudController<ItemApiRequest, ItemApiResponse, Item> {
 
-    @Autowired
-    private ItemApiLogicService itemApiLogicService;
-
-    @PostConstruct
-    public void init(){
-        this.baseService = itemApiLogicService;
-    }
 
 
 }
