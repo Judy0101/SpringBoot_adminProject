@@ -7,6 +7,19 @@ import com.example.myfirst.model.network.response.SettlementApiResponse;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/* Create Controller
+CREATE TABLE `settlement` (
+  `user_id` bigint NOT NULL,
+  `price` decimal(12,4) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+
+INSERT INTO study.settlement (user_id, price)
+	select user_id, sum(total_price) from study.order_group
+    group by user_id
+
+ */
 @RestController
 @RequestMapping("/api/settlement")
 public class SettlementApiController extends CrudController<SettlementApiRequest, SettlementApiResponse, Settlement> {

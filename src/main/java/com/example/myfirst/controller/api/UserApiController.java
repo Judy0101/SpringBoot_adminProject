@@ -25,7 +25,7 @@ public class UserApiController implements CrudInterface<UserApiRequest, UserApiR
 
     @GetMapping("/{id}/orderInfo")
     public Header<UserOrderInfoApiResponse> orderInfo(@PathVariable Long id){
-
+        log.info("{}", id);
         return userApiLogicService.orderInfo(id);
 
     }
