@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
 
-/* Create Controller
+/* Create SQL
 CREATE TABLE `settlement` (
   `user_id` bigint NOT NULL,
   `price` decimal(12,4) NOT NULL,
